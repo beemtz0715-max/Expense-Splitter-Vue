@@ -57,7 +57,6 @@
         .reduce((total, expense)=>total+expense.amount, 0)
 
       const balance = totalPaid - (total.value / people.value.length)
-      console.log(balance)
 
       return `${person} ${balance > 0 ? 'gets' : 'owes'} $${Math.abs(balance).toFixed(2)}`
     })
@@ -99,8 +98,8 @@
 
     <Section title="Total">
         <p>
-            Total Spent: <strong id="totalSpent">${{total}}</strong><br/>
-            Split Per Person: <strong id="splitAmount">${{split}}</strong>
+            Total Spent: <strong id="totalSpent">{{ total }}</strong><br/>
+            Split Per Person: <strong id="splitAmount">{{ split }}</strong>
         </p>
     </Section>
 
@@ -109,7 +108,7 @@
           <li v-for="(summary, index) in summaryList" :key="index">{{ summary }}</li>
         </ul>
     </Section>
-</Card>
+  </Card>
 </template>
 
 <style scoped>
@@ -155,4 +154,4 @@ button {
   background: #dcfce7;
   color: #166534;
 }
-</style
+</style>
